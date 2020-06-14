@@ -25,6 +25,6 @@ And the TB is the testbench for baisic transcation.
 		// Width of S_AXI address bus
 		parameter integer C_S_AXI_ADDR_WIDTH	= 4
 ```
-    >Here the address data units in byte and it is decided by the number of the registors and the width of each registor.(4 registors and each gets 4 bytes)
+   >Here the address data units in byte and it is decided by the number of the registors and the width of each registor.(4 registors and each gets 4 bytes)
     >>Waddr = log2(16) = 4 bit
     
