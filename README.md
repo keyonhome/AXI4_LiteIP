@@ -89,35 +89,7 @@ After selecting the register, can also use the 'WSTRB' field to control the writ
 	    end 
 	end       
  ```
- 	The next step are to write the data to the register latched address in the last step.
- ```Verilog
- // Implement axi_wready generation
-	// axi_wready is asserted for one S_AXI_ACLK clock cycle when both
-	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_wready is 
-	// de-asserted when reset is low. 
 
-	always @( posedge S_AXI_ACLK )
-	begin
-	  if ( S_AXI_ARESETN == 1'b0 )
-	    begin
-	      axi_wready <= 1'b0;
-	    end 
-	  else
-	    begin    
-	      if (~axi_wready && S_AXI_WVALID && S_AXI_AWVALID && aw_en )
-	        begin
-	          // slave is ready to accept write data when 
-	          // there is a valid write address and write data
-	          // on the write address and data bus. This design 
-	          // expects no outstanding transactions. 
-	          axi_wready <= 1'b1;
-	        end
-	      else
-	        begin
-	          axi_wready <= 1'b0;
-	        end
-	    end 
-	end       
  ```
  Next step is the most important for the overall operation which is wirte data into the registers
  ```Verilog
