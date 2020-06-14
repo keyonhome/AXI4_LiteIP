@@ -5,3 +5,4 @@ This is a user defined verilog IP core for FPGA transcation via AXI4_Lite, and t
 And the TB is the testbench for baisic transcation.
 
 # Code 
+![image](https://github.com/keyonhome/AXI4_LiteIP/blob/master/img/Liteport.png)
